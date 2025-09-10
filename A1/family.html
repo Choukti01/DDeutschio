@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deutschio — Family</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="family.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>👨‍👩‍👧 Family</h1>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="greetings.html">Greetings</a>
+      <a href="numbers.html">Numbers</a>
+      <a href="days.html">Days & Time</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="panel">
+      <h2>Members</h2>
+      <ul class="grid-list">
+        <li><b>Mutter</b> — mother</li><li><b>Vater</b> — father</li><li><b>Eltern</b> — parents</li>
+        <li><b>Bruder</b> — brother</li><li><b>Schwester</b> — sister</li>
+        <li><b>Sohn</b> — son</li><li><b>Tochter</b> — daughter</li>
+        <li><b>Oma</b> — grandma</li><li><b>Opa</b> — grandpa</li>
+        <li><b>Onkel</b> — uncle</li><li><b>Tante</b> — aunt</li>
+        <li><b>Cousin / Cousine</b> — cousin (m/f)</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>Examples</h2>
+      <div class="dialog">
+        <p><b>A:</b> Hast du Geschwister?</p>
+        <p><b>B:</b> Ja, ich habe einen Bruder und eine Schwester.</p>
+      </div>
+      <div class="dialog">
+        <p><b>A:</b> Wie heißt deine Mutter?</p>
+        <p><b>B:</b> Meine Mutter heißt Anna.</p>
+      </div>
+      <div class="dialog">
+        <p><b>Task:</b> Zeichne deinen Familienstammbaum und beschreibe ihn auf Deutsch.</p>
+      </div>
+    </div>
+
+    <div class="panel quiz">
+  <h2 id="family-quiz-heading" style="cursor:pointer">🎯 Quiz: Family (10 questions)</h2>
+      <div id="quiz-family"></div>
+      <button class="q-next" id="next-family" style="display:none">Next</button>
+    </div>
+  </section>
+
+ 
+  <script src="quizEngine.js"></script>
+  <script src="familyQuiz.js"></script>
+  <script>
+    document.getElementById('family-quiz-heading').addEventListener('click', function() {
+      if (typeof initFamilyQuiz === 'function') {
+        initFamilyQuiz();
+      }
+    });
+  </script>
+  <script> initFamilyQuiz(); </script>
+
+</body>
+<footer class="footer">© 2025 Deutschio</footer>
+</html>

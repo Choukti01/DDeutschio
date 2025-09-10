@@ -1,0 +1,47 @@
+ body {
+  background: linear-gradient(to right, red, gold, black);
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+button {
+  margin: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: gold;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: red;
+  color: black;
+}
+
+section ul {
+  list-style: none;         
+  padding: 0;
+  margin: 20px auto;
+  text-align: center;       
+}
+
+section ul li {
+  display: inline-block;    
+  margin: 8px;
+  padding: 12px 20px;
+  border: 2px solid gold;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  transition: 0.3s;
+}
+
+section ul li:hover {
+  background: red;
+  border-color: black;
+  transform: scale(1.05);
+  cursor: default;
+} 

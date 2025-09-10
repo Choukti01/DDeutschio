@@ -1,0 +1,68 @@
+.quiz {
+  background: linear-gradient(to bottom, black 33%, red 33% 66%, gold 66%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.q-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.q-text {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.q-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.q-btn {
+  background-color: gold;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.q-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.q-btn.correct {
+  background-color: green;
+  color: white;
+}
+
+.q-btn.wrong {
+  background-color: darkred;
+  color: white;
+}
+
+.q-next {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  font-weight: bold;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
