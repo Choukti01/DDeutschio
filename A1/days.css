@@ -1,7 +1,0 @@
-.grid-list{
-  display:grid; gap:8px; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  list-style:none; padding:0; margin:0;
-}
-.dialog{
-  background:#fff; border-radius:12px; padding:14px; margin:12px 0; border:2px solid #eee;
-}
