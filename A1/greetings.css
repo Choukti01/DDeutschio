@@ -43,5 +43,67 @@ section ul li:hover {
   background: red;
   border-color: black;
   transform: scale(1.05);
-  cursor: default;
+  cursor: default;
+}
+
+
+
+
+#quiz-container {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 10px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+#quiz-question {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: gold;
+}
+
+#quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-option {
+  background: crimson;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.quiz-option:hover {
+  transform: scale(1.05);
+  background: gold;
+  color: black;
+}
+
+#next-btn {
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: gold;
+  cursor: pointer;
+}
+
+#quiz-result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
