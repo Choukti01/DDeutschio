@@ -207,3 +207,169 @@ header {
   background: gold;
 }
 
+
+
+
+
+
+
+
+/* // added quiz styles - append this to your global.css */
+
+/* container */
+.quizzes {
+  max-width: 980px;
+  margin: 28px auto;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* one quiz block */
+.quiz {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  margin: 16px 8px;
+  padding: 14px;
+  color: inherit;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.2s;
+  overflow: visible;
+}
+
+/* small header area */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.quiz-title { margin: 0; font-size: 1.07rem; }
+.quiz-sub { font-size: 0.85rem; opacity: 0.9; }
+
+/* card container */
+.card-container { display: flex; justify-content: center; margin-bottom: 12px; }
+.card {
+  width: 360px;
+  height: 190px;
+  perspective: 1100px;
+  outline: none;
+}
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(.2,.9,.3,1);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-inner.flipped { transform: rotateY(180deg); }
+
+/* faces */
+.face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  padding: 14px;
+  box-sizing: border-box;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+}
+.face.front {
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  color: #fff;
+}
+.face.back {
+  transform: rotateY(180deg);
+  background: #fff;
+  color: #111;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* controls */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.controls button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.12s ease, opacity 0.12s;
+}
+.controls button:active { transform: translateY(1px); }
+.flip-btn { background: gold; color: #000; }
+.knew-btn { background: rgba(34,197,94,0.95); color: #fff; }
+.dont-btn { background: rgba(239,68,68,0.95); color: #fff; }
+.controls button[disabled] { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+/* meta area */
+.meta { display:flex; justify-content:space-between; align-items:center; gap:10px; padding: 0 10px; }
+.progress { font-size: 0.95rem; opacity: 0.95; }
+.result { font-size: 0.95rem; text-align: right; }
+
+/* lock overlay */
+.lock-overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.62);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.98rem;
+  pointer-events: none;
+}
+
+/* locked quiz style */
+.quiz.locked { filter: grayscale(0.02) contrast(0.9); opacity: 0.9; }
+.quiz.locked .lock-overlay { display: flex; pointer-events: auto; }
+
+/* unlocked highlight briefly when newly unlocked */
+.quiz.just-unlocked {
+  box-shadow: 0 8px 30px rgba(255,215,80,0.12);
+  transform: translateY(-4px);
+}
+
+/* pass/fail visuals */
+.quiz .pass { color: #ACF39A; font-weight: 700; margin-top: 6px; }
+.quiz .fail { color: #FFB4B4; font-weight: 700; margin-top: 6px; }
+.quiz .score { font-weight: 700; margin-top: 4px; }
+
+/* retry button style inside result area */
+.result .retry-btn {
+  margin-left: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  background: gold;
+  color: #000;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* smaller screens */
+@media (max-width: 520px) {
+  .card { width: 92%; height: 170px; }
+  .controls { flex-wrap: wrap; gap: 6px; }
+}
