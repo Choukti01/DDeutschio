@@ -148,7 +148,7 @@ footer {
 
 
 
-/* // added navbar styles */
+/* // added navbar styles
 .navbar {
   position: absolute;
   top: 20px;
@@ -156,6 +156,64 @@ footer {
   display: flex;
   gap: 10px;
   z-index: 1000;
+} */
+
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-link {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease, transform 0.3s ease;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.nav-link:hover {
+  background: linear-gradient(45deg, gold, crimson);
+  color: #fff;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+
+  .nav-link {
+    font-size: 1em;
+    padding: 8px 16px;
+   
+  }
+
+
+
+/* Hamburger icon */
+.menu-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none; /* hidden on desktop */
+  color: white;
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 8px;
+}
+
+/* Nav links (desktop) */
+.nav-links {
+  display: none;
+  gap: 10px;
 }
 
 .nav-link {
@@ -178,11 +236,65 @@ footer {
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex; /* show ☰ on mobile */
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: none; /* hide by default */
+    flex-direction: raw;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  }
+
+  .nav-links.show {
+    display: flex; /* only visible when toggled */
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px;
+    text-align: center;
+    width: 100%;
+}
+}
 
 
 
+/* Desktop (≥769px): show menu inline */
+@media (min-width: 769px) {
+  .menu-icon {
+    display: none; /* hide ☰ */
+  }
 
+  .nav-links {
+    display: flex; /* always visible */
+    gap: 15px;
+    position: static;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+  }
 
+  .nav-link {
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .nav-link:hover {
+    background: linear-gradient(45deg, gold, crimson);
+    border-radius: 20px;
+}
+}
 
 
 /* // added login page styles */
@@ -284,57 +396,6 @@ footer {
 }
 
 
-
-
-
-
-/* // added Google button style */
-.google-btn {
-  margin-top: 12px;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  background: #ccc;
-  color: #fff;
-  font-size: 16px;
-  cursor: not-allowed;
-  transition: all 0.3s ease;
-}
-.google-btn.active {
-  background:linear-gradient(45deg, gold, crimson);
-  cursor: pointer;
-}
-
-/* // added Google form */
-.google-form {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-  padding: 12px 18px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #fff;
-  color: #444;
-  font-size: 16px;
-  font-weight: 150;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-}
-.google-form.show {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* // added Google icon */
-.google-icon {
-  width: 24px;
-  height: 24px;
-}
 
 
 

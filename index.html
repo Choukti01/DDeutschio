@@ -10,10 +10,16 @@
 
 
 <!-- // added navbar -->
+<!-- // added navbar -->
 <nav class="navbar">
-  <!-- replace Contact with Profile -->
-  <a href="profile.html" id="profileLink" class="nav-link">Profile</a>
-  <a href="login.html" class="nav-link">Login</a>
+  <!-- Hamburger icon -->
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <!-- Menu links -->
+  <div class="nav-links" id="menu">
+    <a href="profile.html" id="profileLink" class="nav-link">Profile</a>
+    <a href="login.html" class="nav-link">Login</a>
+  </div>
 </nav>
 
 <script>
@@ -104,7 +110,29 @@
     </p> -->
   </footer>
   <br>
- 
+
+  
+
+  <script>
+  // Toggle hamburger menu
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+
+  // Keep your profile redirect logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const profileLink = document.getElementById('profileLink');
+    profileLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const session = localStorage.getItem('ddeutschio_session');
+      if (session) {
+        window.location.href = 'profile.html';
+      } else {
+        window.location.href = 'login.html';
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
