@@ -2,10 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DDEUTSCHIO - Home</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+
+<!-- // added navbar -->
+<nav class="navbar">
+  <!-- replace Contact with Profile -->
+  <a href="profile.html" id="profileLink" class="nav-link">Profile</a>
+  <a href="login.html" class="nav-link">Login</a>
+</nav>
+
+<script>
+  // ADDED: profile link redirect — if logged-in -> profile.html else -> login.html
+  document.addEventListener('DOMContentLoaded', () => {
+    const profileLink = document.getElementById('profileLink');
+    profileLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const session = localStorage.getItem('ddeutschio_session');
+      if (session) {
+        window.location.href = 'profile.html';
+      } else {
+        window.location.href = 'login.html';
+      }
+    });
+  });
+</script>
+
+
     <!-- Brand Name-->
   <h1>DDEUTSCHIO</h1>
 
@@ -30,9 +57,9 @@
 
 <br>
 
-  <!-- <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" 
-       alt="Students learning German" 
-       class="main-image"> -->
+
+
+  
 
         <img src="https://d37sy4vufic209.cloudfront.net/website/_next/static/dynamic/ada4effa7514c4cd238c2f3359658d32/700.jpg" 
        alt="Students learning German" 
@@ -78,6 +105,6 @@
   </footer>
   <br>
  
-  
+
 </body>
 </html>

@@ -74,3 +74,525 @@ footer {
   text-shadow: 1px 1px 3px gold;
 }
 
+
+
+
+/* LOGIN SECTION */
+.login-section {
+  margin: 40px auto;
+  text-align: center;
+}
+
+#login-btn {
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: crimson;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+#login-btn:hover {
+  background: gold;
+  color: black;
+  transform: scale(1.05);
+}
+
+#login-btn.active {
+  transform: scale(1.2);
+}
+
+#login-form {
+  margin-top: 20px;
+  display: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+#login-form.show {
+  display: block;
+}
+
+.google-btn {
+  width: 50%;
+  height: 100px;
+  font-size: 1.5rem;
+  background: white;
+  border: 2px solid #4285F4;
+  color: #4285F4;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.google-btn:hover {
+  transform: scale(1.05);
+  background: #4285F4;
+  color: white;
+}
+
+/* fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+} 
+
+
+
+
+
+
+
+
+
+
+
+/* // added navbar styles */
+.navbar {
+  position: absolute;
+  top: 20px;
+  right: 4px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.nav-link {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease, transform 0.3s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.nav-link:hover {
+  background: linear-gradient(45deg, gold, crimson);
+  color: #fff;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+
+
+
+
+
+
+
+/* // added login page styles */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+.login-title {
+  font-size: 2.2em;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  animation: fadeIn 1s ease forwards;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 280px;
+}
+
+.login-input {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+.login-input:focus {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.login-btn, .google-btn {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.05em;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.25);
+}
+
+.login-btn {
+  background: linear-gradient(45deg, gold, crimson);
+  color: white;
+}
+
+.login-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+}
+
+.google-btn {
+  margin-top: 10px;
+  background: white;
+  color: #444;
+}
+
+.google-btn:hover {
+  transform: scale(1.07);
+  background: #eee;
+}
+
+.divider {
+  margin: 20px 0;
+  font-weight: bold;
+  color: #fff;
+  opacity: 0.8;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/* // added error-message styling */
+.error-message {
+  display: none;
+  color: white !important;
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+
+
+
+
+
+/* // added Google button style */
+.google-btn {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #ccc;
+  color: #fff;
+  font-size: 16px;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+}
+.google-btn.active {
+  background:linear-gradient(45deg, gold, crimson);
+  cursor: pointer;
+}
+
+/* // added Google form */
+.google-form {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 12px 18px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  color: #444;
+  font-size: 16px;
+  font-weight: 150;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+.google-form.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* // added Google icon */
+.google-icon {
+  width: 24px;
+  height: 24px;
+}
+
+
+
+
+
+
+/* ============================
+   DDeutschio — Login & Profile styles (append to index.css)
+   ============================ */
+
+/* Generic card wrappers */
+.login-page, .profile-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.login-card, .profile-card {
+  width: 920px;
+  max-width: 95%;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,215,0,0.08);
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+  color: #fff;
+  animation: floatIn 0.5s ease both;
+}
+
+/* card title */
+.card-title { font-size: 1.6rem; margin-bottom: 10px; color: #ffce00; }
+
+/* form controls */
+.label { display:block; text-align:left; margin-bottom:8px; color:#fff; font-weight:600; }
+.input {
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border: none;
+  outline:none;
+  font-size:1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  background: rgba(255,255,255,0.06);
+  color: white;
+  transition: transform .2s;
+}
+.input:focus { transform: translateY(-3px) scale(1.01); box-shadow: 0 8px 26px rgba(0,0,0,0.5); }
+
+.pin { letter-spacing: 6px; font-weight:700; text-align:center; font-size:1.25rem; }
+
+/* actions */
+.actions { display:flex; gap:12px; margin-top:14px; align-items:center; }
+.btn { padding:10px 14px; border-radius:10px; border: none; cursor:pointer; font-weight:700; }
+.btn.primary { background: linear-gradient(45deg,#ffce00,#dd0000); color:#000; }
+.btn.ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.12); }
+.btn.danger { background: rgba(220,20,60,0.9); color: #fff; }
+
+/* small/utility */
+.small { padding:6px 8px; font-size:0.9rem; }
+.hidden { display:none !important; }
+.divider { text-align:center; color: rgba(255,255,255,0.6); margin-top:16px; margin-bottom:6px; }
+
+/* error */
+.form-error { color:#ffb3b3; margin-top:8px; font-weight:700; }
+
+/* Profile top */
+.profile-top { display:flex; gap:20px; align-items:center; }
+.avatar-wrap { display:flex; flex-direction:column; align-items:center; gap:10px; }
+.avatar {
+  width:140px; height:140px; object-fit:cover; border-radius:14px;
+  border:4px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform .25s, box-shadow .25s;
+}
+.avatar:hover { transform: scale(1.03); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
+.profile-info { flex:1; text-align:left; }
+.profile-info h2 { margin:0; color:#ffce00; font-size:1.6rem; }
+.profile-actions { margin-top:10px; display:flex; gap:10px; }
+
+/* notes */
+.note-section { margin-top:18px; text-align:left; }
+.note-input {
+  width:100%; min-height:80px; padding:12px; border-radius:10px; resize:vertical;
+  background: rgba(255,255,255,0.05); color:white; border:none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+.note-actions { margin-top:8px; display:flex; gap:10px; }
+.notes-list { margin-top:12px; display:flex; flex-direction:column; gap:12px; }
+
+/* note card */
+.note-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,215,0,0.06);
+  padding:12px; border-radius:10px;
+  display:flex; flex-direction:column; gap:8px;
+}
+.note-text { color:#fff; white-space:pre-wrap; font-size:1rem; }
+.note-meta { color: rgba(255,255,255,0.5); font-size:0.85rem; }
+.note-controls { display:flex; gap:8px; justify-content:flex-end; }
+
+/* empty state */
+.empty { color: rgba(255,255,255,0.6); padding:18px; text-align:center; }
+
+/* animations */
+@keyframes floatIn {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.fade-in { animation: floatIn .35s ease both; }
+
+/* responsive */
+@media (max-width: 720px) {
+  .profile-top { flex-direction: column; align-items:center; text-align:center; }
+  .profile-info { text-align:center; }
+  .avatar { width:120px; height:120px; }
+  .login-card, .profile-card { padding:18px; }
+}
+
+/* small tweaks: remove outline for buttons */
+button:focus, input:focus, textarea:focus { outline:none; } 
+
+
+
+/* 🎮 Game Section */
+.games-section {
+  margin: 50px auto;
+  padding: 20px;
+  width: 80%;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.game-box {
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px gold;
+}
+
+#typing-word {
+  font-size: 2rem;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+#typing-input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  width: 200px;
+  text-align: center;
+}
+
+#hangman-letters button {
+  margin: 3px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#hangman-letters button:disabled {
+  background: gray;
+  color: white;
+  cursor: not-allowed;
+}
+
+
+
+
+
+/* --- Word of the Day --- */
+.word-of-day {
+  margin: 30px auto;
+  padding: 20px;
+  width: 70%;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  animation: fadeIn 1s ease forwards;
+}
+.word-box h3 {
+  font-size: 1.5em;
+  color: gold;
+}
+.word-box p {
+  font-size: 1.1em;
+  color: white;
+  opacity: 0.9;
+}
+
+/* --- Drag & Drop Game --- */
+.drag-drop-game {
+  margin: 40px auto;
+  padding: 20px;
+  width: 80%;
+  background: rgba(0,0,0,0.5);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.game-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+}
+.words, .targets {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.draggable {
+  padding: 10px 20px;
+  background: crimson;
+  border-radius: 10px;
+  cursor: grab;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+.draggable.dragging {
+  opacity: 0.6;
+  transform: scale(1.1);
+}
+.dropzone {
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid white;
+  border-radius: 10px;
+  color: black;
+  transition: background 0.3s, transform 0.3s;
+}
+.dropzone.over {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.05);
+}
+.dropzone.correct {
+  background: limegreen;
+  color: black;
+  font-weight: bold;
+}
+.game-message {
+  margin-top: 15px;
+  font-size: 1.2em;
+  color: gold;
+  text-shadow: 0 2px 5px black;
+}
