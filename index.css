@@ -593,7 +593,7 @@ button:focus, input:focus, textarea:focus { outline:none; }
 }
 .word-box h3 {
   font-size: 1.5em;
-  color: gold;
+  color: black;
 }
 .word-box p {
   font-size: 1.1em;
