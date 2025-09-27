@@ -1,3 +1,85 @@
+
+
+/* --- Brand Logo beside Title --- */
+.brand-header {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 20px;
+  animation: fadeDown 1s ease forwards;
+  opacity: 0;
+}
+
+.brand-header h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px black;
+  margin: 0;
+}
+
+.brand-logo {
+  height: 3rem; /* same as h1 font-size */
+  width: auto;
+  object-fit: contain;
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: dropIn 1s ease forwards 0.5s; /* delay logo */
+}
+
+/* Animation for the logo */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-40px) rotate(-15deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .brand-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .brand-logo {
+    height: 2.5rem;
+  }
+  .brand-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+
+
+/* === Logo Styling === */
+.brand-logo {
+  width: 60px;   /* you can make it bigger/smaller */
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black; /* outer black circle */
+  margin: 20px auto; /* centers it */
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+
+
+
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
