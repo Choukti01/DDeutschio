@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEUTSCHIO-chatbot</title>
+    <link rel="stylesheet" href="deutschio.chatbot.css">
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="header">
+            <h1>🤖DeutschioAI </h1>
+            <p>I'm your Deutsch mate in the space of DEUTSCHIO.</p>
+        </div>
+        
+        <div id="chatContainer" class="chat-container">
+            <div class="message bot-message">
+                👋 Azul! <br> I'm DeutschioAI. How can I help you today?
+            </div>
+        </div>
+        
+        <div class="input-container">
+            <input 
+                type="text" 
+                id="messageInput" 
+                class="message-input" 
+                placeholder="Type your message here..."
+                onkeypress="handleKeyPress(event)"
+            >
+            <button onclick="sendMessage()" id="sendButton" class="send-button">
+                Send
+            </button>
+        </div>
+    </div>
+
+<br>
+<br>
+
+
+
+
+  <script src="deutschio-chatbot.js"></script>
+  <script src="https://apifreellm.com/apifree.min.js"></script>
+
+
+  <br>
+  <br>
+<br>
+<br>
+<br>
+
+ <footer>   
+    <p>&copy; DEUTSCHIO | All rights reserved.</p>
+    <!-- <p>
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Service</a>
+    </p> -->
+  </footer>
+  <br>
+
+
+
+</body>
+</html>

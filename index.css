@@ -739,3 +739,23 @@ button:focus, input:focus, textarea:focus { outline:none; }
   color: gold;
   text-shadow: 0 2px 5px black;
 }
+
+
+
+
+ .deutschio-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      border-radius: 8px;
+      background: red;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .deutschio-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    }
