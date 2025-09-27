@@ -57,6 +57,9 @@ Remember the conversation context and refer back to previous messages when relev
         
         // Show typing indicator
         showTyping();
+
+    
+       
         
         try {
             // Build context-aware prompt
@@ -68,10 +71,23 @@ ${conversationHistory.slice(-10).join('\n')}
 Current User Message: ${message}
 
 Please respond naturally considering the conversation context above.`;
-
+        
             // Send to ApiFreeLLM
             const response = await apifree.chat(contextPrompt);
-            
+        
+
+//             const res = await fetch("/.netlify/functions/chat", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({ message: contextPrompt })
+// });
+
+// const data = await res.json();
+// const response = data.reply || "⚠ Sorry, I couldn't get a reply.";
+    
+        
+
+
             // Remove typing indicator
             removeTyping();
             
@@ -91,6 +107,7 @@ Please respond naturally considering the conversation context above.`;
             sendButton.disabled = false;
             input.focus();
         }
+    
     }
 
     function handleKeyPress(event) {
