@@ -19,12 +19,12 @@
 
     /* === Header === */
     header {
-      background: linear-gradient(135deg, #FF0000, #FFD700, #000);
       padding: 60px 20px;
       text-align: center;
-      color: #fff;
+      color: goldenrod;
       position: relative;
       overflow: hidden;
+      
     }
     header h1 {
       font-size: 3em;
@@ -117,6 +117,29 @@
       font-size: 1em;
     }
 
+    .more-about-me {
+    
+  text-decoration: none;
+  position: relative;
+  color: #FFD700;
+}
+
+.more-about-me::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(146, 124, 1);
+  transition: width 0.3s;
+}
+
+.more-about-me:hover::after {
+  width: 100%;
+}
+    
+
     /* === Footer === */
     footer {
       background: #000;
@@ -136,17 +159,17 @@
 <body>
 
   <header>
-    <h1>About the Founder of Deustchio</h1>
-    <p>I am the developer and visionary behind Deustchio, creating a unique learning experience for German learners worldwide.</p>
+    <h1>About the Founder</h1>
   </header>
 
   <section class="about">
     <img src="formalMe.jpg" alt="Developer portrait">
     <div class="text">
-      <h2>Hi! I’m Abdelouahed Choukti</h2>
+      <h2> I’m Abdelouahed Choukti</h2>
       <p> The <span class="highlight">founder and lead developer</span> of <span class="highlight">Deustchio</span>, I built this platform with one goal in mind: to make learning German engaging, efficient, and interactive.</p>
       <p>I designed and implemented <span class="highlight">flashcard systems, interactive exercises, vocabulary builders, and story-based lessons</span> to provide solutions for language learners struggling to retain new content. Every feature is crafted to ensure both <span class="highlight">practical usage and real-world application</span>.</p>
       <p>Through the combination of <span class="highlight">modern web technologies</span>, responsive design. I made Deustchio accessible on all devices while keeping it visually appealing, intuitive, and effective for learners.</p>
+      <a class="more-about-me" href="https://choukti-z-portfolio.netlify.app/">More about my Services here</a>
     </div>
   </section>
 
