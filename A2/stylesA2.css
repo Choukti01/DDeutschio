@@ -1,4 +1,12 @@
+body{
+  background: linear-gradient(to right, gold, black, red);
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
 /* Header styles for indexA2.html */
+
 .hero-a2 {
   text-align: center;
   margin-top: 48px;
@@ -101,7 +109,7 @@
 }
 .quiz-btn:hover,
 .quiz-btn:focus {
-   background: white;
+ background: white;
   color: black;
     transform: scale(1.05) translateY(-10px); /* zoom + float */
   box-shadow: 0 0 25px 10px rgba(255, 215, 0, 0.7),
@@ -117,10 +125,117 @@
   100% { transform: scale(1.08); }
 }
 
+/* Modern animated vocab buttons */
+.vocab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin: 24px auto;
+}
+.vocab-btn {
+  background: linear-gradient(90deg, gold, crimson);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 28px;
+  font-size: 1.1em;
+  font-family: inherit;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.vocab-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 24px rgba(220,20,60,0.18);
+  background: linear-gradient(90deg, crimson, gold);
+}
+
+ul {
+  list-style: none;
+  margin: 24px auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+}
+ul li {
+  margin: 8px 0;
+  padding: 14px 24px;
+  border: 2px solid gold;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 1.1em;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  transition: 0.3s;
+  text-align: center;
+}
+ul li:hover {
+  background: crimson;
+  border-color: gold;
+  transform: scale(1.07);
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color: #1c1c1c;
+  background: linear-gradient(120deg, #000000, #dd0000, #ffce00);
+  background-attachment: fixed;
+  text-align: center;
+}
+
+header {
+  padding: 20px;
+}
+
+.sections {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px;
+}
+
+.card {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 20px;
+  width: 150px;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+  background: gold;
+}
+
+
+.navbar  {
+  margin: 3px 10px;
+  text-align: right;
+  
+}
+
+.navbar  {
+ margin-right: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
+}
 
 
 
-
+.navbar:hover {
+  color: gold;
+  border-bottom: 2px solid gold;
+}
 
 
 

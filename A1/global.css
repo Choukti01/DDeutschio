@@ -1,4 +1,12 @@
+body{
+  background: linear-gradient(to right, gold, black, red);
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
 /* Header styles for indexA2.html */
+
 .hero-a2 {
   text-align: center;
   margin-top: 48px;

@@ -1,4 +1,12 @@
+body{
+  background: linear-gradient(to right, gold, black, red);
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
 /* Header styles for indexA2.html */
+
 .hero-a2 {
   text-align: center;
   margin-top: 48px;
@@ -57,7 +65,7 @@
 .sentence-card span {
   color: #555;
   font-size: 0.98em;
-  display: flex;
+  display: block;
   margin-top: 6px;
 }
 .sentence-card:hover {
@@ -101,7 +109,7 @@
 }
 .quiz-btn:hover,
 .quiz-btn:focus {
-  background: white;
+ background: white;
   color: black;
     transform: scale(1.05) translateY(-10px); /* zoom + float */
   box-shadow: 0 0 25px 10px rgba(255, 215, 0, 0.7),
@@ -208,9 +216,26 @@ header {
 }
 
 
+.navbar  {
+  margin: 3px 10px;
+  text-align: right;
+  
+}
+
+.navbar  {
+ margin-right: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
+}
 
 
 
+.navbar:hover {
+  color: gold;
+  border-bottom: 2px solid gold;
+}
 
 
 
