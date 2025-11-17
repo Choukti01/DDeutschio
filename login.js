@@ -139,5 +139,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // allow pressing Enter to trigger actions
   nameInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') nameContinue.click(); });
   pinInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') pinEnterBtn.click(); });
-  pinSetConfirm.addEventListener('keydown', (e) => { if (e.key === 'Enter') pinSetBtn.click(); });
+  pinSetConfirm.addEventListener('keydown', (e) => { if (e.key === 'Enter') pinSetBtn.click(); });
 });
