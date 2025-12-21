@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deutschio - Sign Up</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="login-page">
+  <div class="login-card">
+    <h2 class="login-title">Create Account</h2>
+    <form id="signupForm" class="login-form">
+      <input type="email" id="signupEmail" placeholder="Email" class="login-input" required>
+      <input type="password" id="signupPassword" placeholder="Password" class="login-input" required>
+      <button type="submit" class="login-btn">Sign Up</button>
+      <div id="signupError" class="error-message"></div>
+    </form>
+    <p style="margin-top:10px;">Already have an account? <a href="login.html" style="color: gold;">Login</a></p>
+  </div>
+</div>
+
+
+<script src="config.js"></script>
+
+<script>
+const signupForm = document.getElementById('signupForm');
+signupForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById('signupEmail').value;
+  const password = document.getElementById('signupPassword').value;
+  const errorDiv = document.getElementById('signupError');
+
+  try {
+    const res = await fetch('https://deutschio.up.railway.app/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      alert('Signup successful! You can now login.');
+      window.location.href = 'login.html';
+    } else {
+      errorDiv.style.display = 'block';
+      errorDiv.textContent = data.message || 'Signup failed';
+    }
+  } catch (err) {
+    errorDiv.style.display = 'block';
+    errorDiv.textContent = 'Server error';
+  }
+});
+</script>
+
+</body>
+</html>

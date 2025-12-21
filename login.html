@@ -1,55 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Login — Deutschio</title>
+  <meta charset="UTF-8">
+  <title>Deutschio — Login</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div class="login-page">
-    <div class="login-card">
-      <h2 class="card-title">Welcome to Deutschio</h2>
 
-      <!-- Step 1: enter username -->
-      <div id="step-name" class="step">
-        <label class="label">Enter your name</label>
-        <input id="nameInput" class="input" placeholder="e.g. Khalid" autocomplete="name" />
-        <div class="hint">Your name will be shown in your profile.</div>
-        <div class="actions">
-          <button id="nameContinue" class="btn primary">Continue</button>
-        </div>
-        <p id="nameError" class="form-error"></p>
-      </div>
-
-      <!-- Step 2A: user exists -> enter PIN -->
-      <div id="step-pin-enter" class="step hidden">
-        <label class="label">Welcome back, <span id="userDisplayName"></span></label>
-        <input id="pinInput" class="input pin" placeholder="Enter 4-digit PIN" inputmode="numeric" maxlength="4" />
-        <div class="actions">
-          <button id="pinEnterBtn" class="btn primary">Enter</button>
-          <button id="pinForgotBtn" class="btn ghost">Reset / Forgot PIN</button>
-        </div>
-        <p id="pinError" class="form-error"></p>
-      </div>
-
-      <!-- Step 2B: new user -> set PIN -->
-      <div id="step-pin-set" class="step hidden">
-        <label class="label">Set a 4-digit PIN (no password)</label>
-        <input id="pinSetInput" class="input pin" placeholder="e.g. 1234" inputmode="numeric" maxlength="4" />
-        <input id="pinSetConfirm" class="input pin" placeholder="Confirm PIN" inputmode="numeric" maxlength="4" />
-        <div class="actions">
-          <button id="pinSetBtn" class="btn primary">Save PIN & Continue</button>
-        </div>
-        <p id="pinSetError" class="form-error"></p>
-      </div>
-
-      <div class="divider">Your data is stored only on this device</div>
-
-      <div class="small-note">After login you'll be redirected to your Profile where you can add notes and a picture.</div>
-    </div>
+<div class="login-page">
+  <div class="login-card">
+    <h2 class="login-title">Login to Deutschio</h2>
+    <form id="loginForm" class="login-form">
+      <input type="email" id="loginEmail" placeholder="Email" class="login-input" required>
+      <input type="password" id="loginPassword" placeholder="Password" class="login-input" required>
+      <button type="submit" class="login-btn">Login</button>
+      <div id="loginError" class="error-message"></div>
+    </form>
+    <p style="margin-top:10px;">Don't have an account? <a href="signup.html" style="color: gold;">Sign Up</a></p>
   </div>
+</div>
 
-  <script src="login.js"></script>
+
+<script src="config.js"></script>
+<script src="login.js"></script>
+
 </body>
 </html>
