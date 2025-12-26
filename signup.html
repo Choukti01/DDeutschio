@@ -21,38 +21,54 @@
 </div>
 
 
-<script src="config.js"></script>
-
 <script>
 const signupForm = document.getElementById('signupForm');
+
 signupForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const email = document.getElementById('signupEmail').value;
+  const email = document.getElementById('signupEmail').value.trim();
   const password = document.getElementById('signupPassword').value;
   const errorDiv = document.getElementById('signupError');
+
+  errorDiv.style.display = 'none';
+  errorDiv.textContent = '';
 
   try {
     const res = await fetch('https://deutschio.up.railway.app/signup', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({ email, password })
     });
 
-    const data = await res.json();
-    if (res.ok) {
-      alert('Signup successful! You can now login.');
-      window.location.href = 'login.html';
-    } else {
-      errorDiv.style.display = 'block';
-      errorDiv.textContent = data.message || 'Signup failed';
+    let data = {};
+    const contentType = res.headers.get('content-type');
+
+    if (contentType && contentType.includes('application/json')) {
+      data = await res.json();
     }
+
+    if (!res.ok) {
+      console.error('Signup failed:', res.status, data);
+      errorDiv.style.display = 'block';
+      errorDiv.textContent =
+        data.message || `Signup failed (status ${res.status})`;
+      return;
+    }
+
+    alert('Signup successful! You can now login.');
+    window.location.href = 'login.html';
+
   } catch (err) {
+    console.error('Network error:', err);
     errorDiv.style.display = 'block';
-    errorDiv.textContent = 'Server error';
+    errorDiv.textContent = 'Cannot connect to server';
   }
 });
 </script>
+
 
 </body>
 </html>
